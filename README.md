@@ -22,10 +22,16 @@ mysql --user='username' --password='pass' --host="ip_host" db < db.sql
 mysqldump -u root -p databasename tableName  > myfile.sql
 ```
 
+replace all table name in vim
+```
+:%s/foo/bar/g
+:%s/`CustomersBackup2017`/`tableName`/g
+```
+
 ## mysql import table from backup file
 ```
 CREATE TABLE tableName LIKE original_table;
-mysql -u root -p databasename tableName  < myfile.sql
+mysql -u root -p databasename < myfile.sql
 ```
 
 ##
